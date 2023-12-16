@@ -2,6 +2,10 @@ const data = [
     { name: "john", age: 24, profession: "developer" },
     { name: "jane", age: 27, profession: "admin" },
   ];
+  const dummy =  [
+    { name: "john", age: 28, profession: "developer" },
+    { name: "jane", age: 25, profession: "admin" },
+  ];
   
   // 1. Print Developers
   function printDeveloper() {
@@ -22,7 +26,13 @@ console.log(data)}
   // 4. Concatenate Array
   function concatenateArray() {
 
-  }
+    const concatenatedArray = [...data, ...dummy];
+    
+    console.log(concatenatedArray);
+    }
+
+
+  
   
   // 5. Average Age
   function averageAge() {
@@ -38,7 +48,8 @@ console.log(averageAge);
   }
   
   // 7. Unique Professions
-  function uniqueProfessions() {}
+  function uniqueProfessions() {const findProfessions = new Set(data.map(record => record.profession))
+    console.log(findProfessions);}
   
   // 8. Sort by Age
   function sortByAge() {const sortAge = data.sort((a, b) => a.age - b.age);
