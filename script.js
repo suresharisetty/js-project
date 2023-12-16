@@ -1,16 +1,17 @@
 const data = [
-    { name: "john", age: 24, profession: "admin" },
-    { name: "jane", age: 27, profession: "developer" },
+    { name: "john", age: 24, profession: "developer" },
+    { name: "jane", age: 27, profession: "admin" },
   ];
   
   // 1. Print Developers
   function printDeveloper() {
-    const found = data.find((profession) =>  profession="developer");
+    const found = data.find((record) => { return record.profession = 'developer' });
     console.log(found);
   }
   
   // 2. Add Data
-  function addData() {}
+  function addData() {data.push({name: 'Karthik',age: 22, profession: 'student'});
+console.log(data)}
   
   // 3. Remove Admins
   function removeAdmin() {}
@@ -22,7 +23,10 @@ const data = [
   function averageAge() {}
   
   // 6. Age Check
-  function checkAgeAbove25() {}
+  function checkAgeAbove25() {const above = data.find((record) => { return record.age > 25 });
+  console.log(above);
+
+  }
   
   // 7. Unique Professions
   function uniqueProfessions() {}
