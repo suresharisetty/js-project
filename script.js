@@ -5,7 +5,7 @@ const data = [
   
   // 1. Print Developers
   function printDeveloper() {
-    const found = data.find((record) => { return record.profession = 'developer' });
+    const found = data.filter((record) => record.profession === 'developer')
     console.log(found);
   }
   
@@ -14,13 +14,22 @@ const data = [
 console.log(data)}
   
   // 3. Remove Admins
-  function removeAdmin() {}
+  function removeAdmin() {const found = data.filter((record) => record.profession !=="admin")
+  console.log(found);
+
+  }
   
   // 4. Concatenate Array
-  function concatenateArray() {}
+  function concatenateArray() {
+
+  }
   
   // 5. Average Age
-  function averageAge() {}
+  function averageAge() {
+    const totalAge = data.reduce((sum, obj) => sum + obj.age, 0);
+const averageAge = totalAge / data.length;
+console.log(averageAge);
+  }
   
   // 6. Age Check
   function checkAgeAbove25() {const above = data.find((record) => { return record.age > 25 });
@@ -32,10 +41,19 @@ console.log(data)}
   function uniqueProfessions() {}
   
   // 8. Sort by Age
-  function sortByAge() {}
+  function sortByAge() {const sortAge = data.sort((a, b) => a.age - b.age);
+    console.log(sortAge);}
   
   // 9. Update Profession
-  function updateJohnsProfession() {}
+  function updateJohnsProfession() {for(const record of data) {
+    if(record.name === 'john') {
+    record.profession = 'student'
+    }
+    }
+    console.log(data);}
   
   // 10. Profession Count
-  function getTotalProfessions() {}
+  function getTotalProfessions() {
+    const findProfessions = new Set(data.map(record => record.profession))
+    console.log(findProfessions.size);
+  }
